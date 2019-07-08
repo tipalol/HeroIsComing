@@ -1,6 +1,9 @@
 ﻿using System;
 namespace GameLogic.Entities
 {
+    /// <summary>
+    /// Базовый игровой объект
+    /// </summary>
     [Serializable]
     public abstract class GameObject
     {

@@ -8,6 +8,9 @@ namespace GameLogic
 {
     public class Game
     {
+        /// <summary>
+        /// От мода игры будет зависеть доступный функционал
+        /// </summary>
         private readonly string Mode;
         private static string GetMode(string mode) =>
             mode switch
@@ -47,6 +50,10 @@ namespace GameLogic
         //События
         List<Event> Events = new List<Event>();
 
+        /// <summary>
+        /// Получить данные в сжатом виде
+        /// </summary>
+        /// <returns></returns>
         private Data.GameData GetData()
         {
             var gameData = new Data.GameData();
@@ -57,6 +64,10 @@ namespace GameLogic
             return gameData;
         }
 
+        /// <summary>
+        /// Установить данные
+        /// </summary>
+        /// <param name="gameData"></param>
         public void SetData(Data.GameData gameData)
         {
             Locations = gameData.Locations;
@@ -64,10 +75,20 @@ namespace GameLogic
             Player = gameData.Player;
         }
 
+        /// <summary>
+        /// Сохранить игру
+        /// </summary>
         public void Save() => dataWriter.WriteData(GetData());
 
+        /// <summary>
+        /// Загрузить игру
+        /// </summary>
+        /// <returns></returns>
         public Data.GameData Load() => dataReader.ReadData();
 
+        /// <summary>
+        /// Метод вызывается при старте новой игры
+        /// </summary>
         public void NewGame()
         {
             //Сигнал всем объектам в игре, что началась новая игра
@@ -79,6 +100,9 @@ namespace GameLogic
             newGame.OnGoEvent();
         }
 
+        /// <summary>
+        /// Метод вызывается при каждом запуске игры
+        /// </summary>
         public void Initialize()
         {
             #region Загрузка данных

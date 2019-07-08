@@ -6,6 +6,9 @@ using GameLogic.Events;
 
 namespace GameLogic.Data
 {
+    /// <summary>
+    /// Представление данных в базе данных
+    /// </summary>
     [Serializable]
     public struct GameData
     {

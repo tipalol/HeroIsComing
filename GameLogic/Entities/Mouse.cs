@@ -1,6 +1,9 @@
 ﻿using System;
 namespace GameLogic.Entities
 {
+    /// <summary>
+    /// Пример реализации персонажа в игре
+    /// </summary>
     public class Mouse : Person, ICanFight, IRefreshable
     {
         public int MaxHealth { get; set; }

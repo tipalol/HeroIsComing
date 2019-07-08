@@ -1,6 +1,9 @@
 ﻿using System;
 namespace GameLogic.Entities
 {
+    /// <summary>
+    /// Пример реализации персонажа
+    /// </summary>
     [Serializable]
     public class Stranger : Person
     {
